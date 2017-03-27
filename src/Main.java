@@ -40,7 +40,7 @@ public class Main {
                     consulta = "//PLANT[AVAILABILITY = max(//PLANT/AVAILABILITY)]/COMMON";//introducimos la consulta a realizar
                     System.out.println("Els països que conté son els següents");
                     basexconec.consulta(username, pass, rutaXML, bbdd, consulta, ip, "consulta");//llamamos el metodo pasandole los datos cuando le paso lo de tipo es solo para saber si llamar al otro metodo o no
-                    break; // optional
+                    break;
 
                 case 2:
                     consulta = "/";
@@ -52,19 +52,11 @@ public class Main {
                     System.out.println("Les dades del preu de l'estoc és de: ");
                     basexconec.consulta(username, pass, rutaXML, bbdd, consulta, ip, "parserXML");
 
-                    break; // optional
+                    break;
 
-                /*case 4:
-                    consulta = "//record[country=\"Uganda\"]/people/population";
-                    System.out.println("La quantitat de població que hi ha en Uganda és: ");
-                    consulta(username, pass, rutaFacktbook, bbdd, consulta, ip);
-                    break; // optional
-
-                case 5:
-                    consulta = "//country[name=\"Peru\"]/province/city/name";
-                    System.out.println("Les ciutats de peru son: ");
-                    consulta(username, pass, rutaMondial, bbdd, consulta, ip);
-                    break; // optional*/
+                case 4:
+                    basexconec.crearRecurso(username,pass,ip );
+                    break;
 
                 default:
                     break;

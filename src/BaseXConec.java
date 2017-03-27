@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -82,6 +83,15 @@ public class BaseXConec {
     }
 
 
+    public static void crearRecurso(String username, String pass, String ip) throws IOException {
+        BaseXClient session = new BaseXClient(ip, 1984, username, pass);
+        session.execute("create db TahaBakk");
+        System.out.println(session.info());
+        ByteArrayInputStream bais = new ByteArrayInputStream("<x>Hello World!</x>".getBytes());
+        session.add("TahaBakk/UF3-ExamenF-Plantes.xml", bais);
+        System.out.println(session.info());
+
+    }
 
 }
 
